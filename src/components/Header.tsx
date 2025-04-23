@@ -1,5 +1,10 @@
 import furiaLogo from "../assets/furiaLogo.webp";
-import { Instagram, Twitch, Twitter } from "lucide-react";
+import {
+  Instagram,
+  ShoppingBag,
+  Twitch,
+  Twitter,
+} from "lucide-react";
 
 export default function Header() {
   return (
@@ -12,6 +17,12 @@ export default function Header() {
           </h1>
         </div>
         <div className="flex gap-6">
+          <a
+            href="#"
+            className="text-furia-lightGray hover:text-furia-white transition-colors"
+          >
+            <ShoppingBag className="h-5 w-5" />
+          </a>
           <a
             href="#"
             className="text-furia-lightGray hover:text-furia-white transition-colors"

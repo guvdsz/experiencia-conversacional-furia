@@ -7,7 +7,7 @@ export default function ChatMessage({ message }: { message: string }) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className="flex gap-3 items"
+      className="w-fit flex gap-3 items"
     >
       <div className="w-10 h-10 p-1 rounded-full bg-furia-lightBlack flex items-center justify-center">
         <Bot className="text-furia-white" />

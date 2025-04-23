@@ -10,4 +10,19 @@
   --color-furia-lightGray: #9ca3af;
   --color-furia-lightBlack: #222;
   --gradient-furia: linear-gradient(to top, #000000, #111111);
+  --scrollbar-bg: transparent;
+}
+
+::-webkit-scrollbar {
+  background-color: var(--scrollbar-bg);
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-furia-lightBlack); 
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent; 
 }
