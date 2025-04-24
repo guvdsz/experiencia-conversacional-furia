@@ -1,7 +1,7 @@
 import { Bot } from "lucide-react";
 import { motion } from "motion/react";
 
-export default function ChatMessage({ message }: { message: string }) {
+export default function ChatMessage({ message, time }: { message: string, time: string }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -27,7 +27,7 @@ export default function ChatMessage({ message }: { message: string }) {
             "text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity text-furia-white/70"
           }
         >
-          <span>há 2 minutos</span>
+          <span>{time}</span>
         </motion.div>
       </div>
     </motion.div>
