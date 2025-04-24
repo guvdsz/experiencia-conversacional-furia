@@ -4,7 +4,7 @@ import Header from "./components/Header";
 
 function App() {
   return (
-    <main className="h-screen flex flex-col bg-furia-black text-furia-white">
+    <main className="h-screen flex flex-col bg-furia-black text-furia-white relative">
       <Header />
       <ChatContainer />
       <ChatInput />
