@@ -25,7 +25,6 @@ experiencia-conversacional-furia/
 │   └── IA.ts              # Integração com a API de IA
 ├── .env                   # Variáveis de ambiente
 ├── package.json           # Dependências e scripts
-├── tailwind.config.js     # Configuração do TailwindCSS
 ├── tsconfig.json          # Configuração do TypeScript
 └── vite.config.ts         # Configuração do Vite
 ```
