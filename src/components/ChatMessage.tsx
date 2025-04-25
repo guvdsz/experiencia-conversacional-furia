@@ -16,7 +16,7 @@ export default function ChatMessage({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className="w-full flex gap-3 items"
+      className={`w-full gap-3 items ${isUser ? "flex-row-reverse" : "flex-row"} flex`}
     >
       <div className="w-10 h-10 p-1 rounded-full bg-furia-lightBlack flex items-center justify-center">
         {isUser ? (
@@ -28,7 +28,7 @@ export default function ChatMessage({
 
       <div
         className={
-          "group relative max-w-1/2 px-4 py-3 rounded-2xl shadow-md bg-furia-lightBlack text-furia-white"
+          "group relative sm:max-w-7/10 lg:max-w-1/2 px-4 py-3 rounded-2xl shadow-md bg-furia-lightBlack text-furia-white"
         }
       >
         <p className="text-sm md:text-base">{message}</p>
