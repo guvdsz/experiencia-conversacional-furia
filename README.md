@@ -1,5 +1,5 @@
 # FURIA Chat
-O FURIA Chat é uma aplicação interativa desenvolvida com React, TypeScript e Vite, que simula uma experiência de conversa com um assistente virtual apaixonado pelo time de esports FURIA. O assistente responde perguntas sobre o time, fornece informações, cria quizzes e interage de forma vibrante e temática. Você pode acessa-lo em https://furiachat.netlify.app/ ou fazer o setup da aplicação localmente na seção Setup deste documento.
+O FURIA Chat é uma aplicação interativa desenvolvida com React, TypeScript e Vite, que simula uma experiência de conversa com um assistente virtual apaixonado pelo time de Counter-Strike FURIA. O assistente responde perguntas sobre o time, fornece informações, cria quizzes e interage de forma vibrante e temática. Você pode acessa-lo em https://furiachat.netlify.app/ ou fazer o setup da aplicação localmente na seção Setup deste documento.
 
 # Tecnologias Utilizadas
 - React: Biblioteca para construção de interfaces de usuário.
