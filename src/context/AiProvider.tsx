@@ -18,7 +18,7 @@ export const AIProvider = ({ children }: React.PropsWithChildren) => {
         console.log("Nenhuma resposta recebida do modelo.");
         return;
       }
-      setResponses((prevResponses) => [...prevResponses, aiResponse]);
+      setResponses((prevResponses) => [...prevResponses, input, aiResponse]);
     } catch (error) {
       console.error(error);
       setError("Erro ao buscar uma resposta. Por favor, tente novamente.");
