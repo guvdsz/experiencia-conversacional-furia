@@ -1,8 +1,8 @@
 import { createContext } from "react";
-
+import { Response } from "./AiProvider";
 interface AIContextType {
   loading: boolean;
-  responses: string[];
+  responses: Response[];
   error: string | null;
   fetchResponse: (input: string) => Promise<void>;
 }
