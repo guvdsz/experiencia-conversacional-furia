@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AIContext } from "./AiContext"; 
+import { AIContext } from "./AiContext";
 import { getAiResponse } from "../IA";
 
 export const AIProvider = ({ children }: React.PropsWithChildren) => {
@@ -10,8 +10,10 @@ export const AIProvider = ({ children }: React.PropsWithChildren) => {
   const fetchResponse = async (input: string) => {
     setLoading(true);
     try {
-      const aiResponse = await getAiResponse(input); 
-      
+      const history = responses.join("\n");
+      const fullInput = `${history}\nUsuário: ${input}`;
+      const aiResponse = await getAiResponse(fullInput);
+
       if (!aiResponse) {
         console.log("Nenhuma resposta recebida do modelo.");
         return;
