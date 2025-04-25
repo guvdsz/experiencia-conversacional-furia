@@ -2,7 +2,7 @@ import { ArrowUp, LoaderCircle } from "lucide-react";
 import { useAI } from "../hooks/useAi";
 
 export default function ChatInput() {
-  const { fetchResponse, loading } = useAI();
+  const { fetchResponse, loading, setResponses } = useAI();
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -10,6 +10,10 @@ export default function ChatInput() {
       const formData = new FormData(event.currentTarget);
       const message = formData.get("message");
       if (!message) return;
+      setResponses((prevResponses) => [
+        ...prevResponses,
+        { text: message as string, role: "user" },
+      ]);
       fetchResponse(message as string);
     } catch (error) {
       console.error("Erro ao enviar a mensagem:", error);

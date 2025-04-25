@@ -23,7 +23,7 @@ export const AIProvider = ({ children }: React.PropsWithChildren) => {
         console.log("Nenhuma resposta recebida do modelo.");
         return;
       }
-      setResponses((prevResponses) => [...prevResponses, {text: input, role: "user"}, {text: aiResponse, role: "assistant"}]);
+      setResponses((prevResponses) => [...prevResponses, {text: aiResponse, role: "assistant"}]);
     } catch (error) {
       console.error(error);
       setError("Erro ao buscar uma resposta. Por favor, tente novamente.");
@@ -32,7 +32,7 @@ export const AIProvider = ({ children }: React.PropsWithChildren) => {
     }
   };
   return (
-    <AIContext.Provider value={{ loading, responses, fetchResponse, error }}>
+    <AIContext.Provider value={{ loading, responses, fetchResponse, error, setResponses }}>
       {children}
     </AIContext.Provider>
   );
