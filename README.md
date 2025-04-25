@@ -1,54 +1,65 @@
-# React + TypeScript + Vite
+# FURIA Chat
+O FURIA Chat é uma aplicação interativa desenvolvida com React, TypeScript e Vite, que simula uma experiência de conversa com um assistente virtual apaixonado pelo time de esports FURIA. O assistente responde perguntas sobre o time, fornece informações, cria quizzes e interage de forma vibrante e temática. Você pode acessa-lo em https://furiachat.netlify.app/ ou fazer o setup da aplicação localmente na seção Setup deste documento.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Tecnologias Utilizadas
+- React: Biblioteca para construção de interfaces de usuário.
+- TypeScript: Superset do JavaScript que adiciona tipagem estática.
+- Vite: Ferramenta de build rápida para desenvolvimento web.
+- TailwindCSS: Framework CSS para estilização.
+- Lucide React: Ícones SVG para React.
+- Motion: Biblioteca para animações.
+- Google GenAI: API para geração de respostas inteligentes.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+# Estrutura do projeto
+```
+experiencia-conversacional-furia/
+├── public/                # Arquivos estáticos
+├── src/                   # Código-fonte
+│   ├── assets/            # Imagens e outros recursos
+│   ├── components/        # Componentes React
+│   ├── context/           # Context API para gerenciamento de estado
+│   ├── hooks/             # Hooks personalizados
+│   ├── styles/            # Estilos globais
+│   ├── App.tsx            # Componente principal
+│   ├── main.tsx           # Ponto de entrada da aplicação
+│   └── IA.ts              # Integração com a API de IA
+├── .env                   # Variáveis de ambiente
+├── package.json           # Dependências e scripts
+├── tailwind.config.js     # Configuração do TailwindCSS
+├── tsconfig.json          # Configuração do TypeScript
+└── vite.config.ts         # Configuração do Vite
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+# Funcionalidades
+- Envio de mensagens: O usuário pode enviar mensagens para o assistente.
+- Respostas temáticas: O assistente responde com entusiasmo e informações sobre o time FURIA.
+- Quizzes interativos: O assistente pode criar quizzes sobre o time.
+- Scroll automático: O chat rola automaticamente para a última mensagem.
+- Responsividade: Layout adaptado para dispositivos móveis e desktops.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+# Setup
+1. Clone o respositório
 ```
+git clone https://github.com/seu-usuario/experiencia-conversacional-furia.git
+cd experiencia-conversacional-furia
+```
+
+2. Instale as dependências
+```
+git clone https://github.com/seu-usuario/experiencia-conversacional-furia.git
+cd experiencia-conversacional-furia
+```
+
+3. Solicite uma API Key do Google Gemini (crie um projeto no Google Cloud Console e depois gere uma key seguindo as instruções deste link https://ai.google.dev/gemini-api/docs/api-key?hl=pt-br
+
+4. Crie e configure um arquivo .env com a variável de ambiente abaixo 
+```
+VITE_API_KEY="SUA_CHAVE_API"
+```
+
+5. Inicie o servidor de desenvolvimento
+```
+npm run dev
+```
+
+Desenvolvido por Gustavo Viana de Souza para FURIA Tech
