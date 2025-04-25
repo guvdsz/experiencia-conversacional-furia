@@ -1,25 +1,46 @@
-import { ArrowUp, X } from "lucide-react";
+import { ArrowUp, LoaderCircle } from "lucide-react";
+import { useAI } from "../hooks/useAi";
 
 export default function ChatInput() {
+  const { fetchResponse, loading } = useAI();
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    try {
+      const formData = new FormData(event.currentTarget);
+      const message = formData.get("message");
+      if (!message) return;
+      fetchResponse(message as string);
+    } catch (error) {
+      console.error("Erro ao enviar a mensagem:", error);
+      alert("Erro ao enviar a mensagem. Tente novamente mais tarde.");
+    } finally {
+      event.currentTarget.reset();
+    }
+  };
+
   return (
     <div className="bg-transparent px-5 pb-5">
-      <form className="flex gap-3">
+      <form className="flex gap-3" onSubmit={handleSubmit}>
         <textarea
           placeholder="Faça alguma pergunta..."
-          className="w-full h-25 p-5 rounded-lg bg-furia-black text-furia-white border border-furia-white/50 outline-none focus:border-furia-white transition-colors resize-none"
+          name="message"
+          disabled={loading}
+          className={`w-full h-25 p-5 rounded-lg bg-furia-black text-furia-white border border-furia-white/50 outline-none focus:border-furia-white transition-colors resize-none ${
+            loading ? "opacity-50 cursor-not-allowed" : ""}`}
         />
         <div className="flex flex-col gap-2">
           <button
             type="submit"
-            className="bg-furia-white rounded-lg text-furia-black hover:bg-furia-lightGray transition-colors cursor-pointer w-10 flex-1 flex items-center justify-center"
+            className={`bg-furia-white rounded-lg text-furia-black hover:bg-furia-lightGray transition-colors cursor-pointer w-10 flex-1 flex items-center justify-center ${
+              loading ? "opacity-50 cursor-not-allowed" : ""}`}
+            disabled={loading}
           >
-            <ArrowUp className="h-5 w-5" />
-          </button>
-          <button
-            type="button"
-            className="bg-furia-white rounded-lg text-furia-black hover:bg-furia-lightGray transition-colors cursor-pointer w-10 flex-1 flex items-center justify-center"
-          >
-            <X className="h-5 w-5" />
+            {loading ? (
+              <LoaderCircle className="animate-spin h-5 w-5 text-furia-black" />
+            ) : (
+              <ArrowUp className="h-5 w-5" />
+            )}
           </button>
         </div>
       </form>
