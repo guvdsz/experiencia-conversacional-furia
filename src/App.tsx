@@ -6,7 +6,7 @@ import { AIProvider } from "./context/AiProvider";
 function App() {
   return (
     <AIProvider>
-      <main className="h-screen flex flex-col bg-furia-black text-furia-white relative">
+      <main className="h-dvh flex flex-col bg-furia-black text-furia-white relative">
         <Header />
         <ChatContainer />
         <ChatInput />
