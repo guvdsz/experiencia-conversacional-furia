@@ -19,7 +19,7 @@ experiencia-conversacional-furia/
 │   ├── components/        # Componentes React
 │   ├── context/           # Context API para gerenciamento de estado
 │   ├── hooks/             # Hooks personalizados
-│   ├── styles/            # Estilos globais
+│   ├── index.css          # Estilos globais
 │   ├── App.tsx            # Componente principal
 │   ├── main.tsx           # Ponto de entrada da aplicação
 │   └── IA.ts              # Integração com a API de IA
