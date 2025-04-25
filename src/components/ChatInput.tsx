@@ -27,13 +27,23 @@ export default function ChatInput() {
           name="message"
           disabled={loading}
           className={`w-full h-25 p-5 rounded-lg bg-furia-black text-furia-white border border-furia-white/50 outline-none focus:border-furia-white transition-colors resize-none ${
-            loading ? "opacity-50 cursor-not-allowed" : ""}`}
+            loading ? "opacity-50 cursor-not-allowed" : ""
+          }`}
+          onKeyDown={(event) => {
+            if (event.key === "Enter" && !event.shiftKey) {
+              event.preventDefault();
+              (
+                event.currentTarget.closest("form") as HTMLFormElement
+              )?.requestSubmit();
+            }
+          }}
         />
         <div className="flex flex-col gap-2">
           <button
             type="submit"
             className={`bg-furia-white rounded-lg text-furia-black hover:bg-furia-lightGray transition-colors cursor-pointer w-10 flex-1 flex items-center justify-center ${
-              loading ? "opacity-50 cursor-not-allowed" : ""}`}
+              loading ? "opacity-50 cursor-not-allowed" : ""
+            }`}
             disabled={loading}
           >
             {loading ? (
