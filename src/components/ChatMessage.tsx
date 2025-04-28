@@ -30,7 +30,7 @@ export default function ChatMessage({
 
       <div
         className={
-          "w-full sm:max-w-7/10 lg:max-w-1/2 p-4 rounded-2xl shadow-md bg-furia-lightBlack text-furia-white"
+          "sm:max-w-7/10 lg:max-w-1/2 p-4 rounded-2xl shadow-md bg-furia-lightBlack text-furia-white"
         }
       >
         <p className="text-sm md:text-base">{message}</p>
