@@ -20,7 +20,7 @@ export const AIProvider = ({ children }: React.PropsWithChildren) => {
       const aiResponse = await getAiResponse(fullInput);
 
       if (!aiResponse) {
-        console.log("Nenhuma resposta recebida do modelo.");
+        setError("Erro ao buscar uma resposta. Por favor, tente novamente.");
         return;
       }
       setResponses((prevResponses) => [...prevResponses, {text: aiResponse, role: "assistant"}]);

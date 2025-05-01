@@ -4,10 +4,13 @@ import ChatMessage from "./ChatMessage";
 import LoadingMessage from "./LoadingMessage";
 
 export default function ChatContainer() {
-  const { responses, loading } = useAI();
+  const { responses, loading, error } = useAI();
   const messages = responses.map((response, index) => (
     <ChatMessage key={index} message={response.text} time={"Agora"} role={response.role} />
   ));
+  const errorMessage = error ? (
+    <ChatMessage message={error} time={"Agora"} role="assistant" />
+  ) : null;
   const chatWindowRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -26,6 +29,7 @@ export default function ChatContainer() {
         <ChatMessage message="Quer saber do próximo jogo da FURIA, um fato irado sobre o FalleN, ou testar seus conhecimentos num quiz? 😜 Manda sua pergunta!" time={"Agora"} role="assistant"/>
         {messages.length > 0 && messages}
         {loading && <LoadingMessage />}
+        {errorMessage && errorMessage}
       </div>
     </div>
   );
